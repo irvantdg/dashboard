@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 210 20% 98%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        --primary: 222 47% 15%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 210 20% 94%;
+        --secondary-foreground: 222 47% 15%;
+        --muted: 210 20% 94%;
+        --muted-foreground: 215 16% 42%;
+        --accent: 199 89% 40%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 72% 45%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 214 20% 88%;
+        --input: 214 20% 85%;
+        --ring: 199 89% 40%;
+        --chart-1: 199 89% 40%;
+        --chart-2: 174 72% 35%;
+        --chart-3: 38 92% 45%;
+        --chart-4: 222 47% 30%;
+        --chart-5: 0 72% 50%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}
+
+.matrix-scroll::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+.matrix-scroll::-webkit-scrollbar-thumb {
+    background: hsl(215 16% 70%);
+    border-radius: 6px;
+}
+.matrix-scroll::-webkit-scrollbar-track {
+    background: hsl(210 20% 94%);
+}

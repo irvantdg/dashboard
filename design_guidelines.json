@@ -1,0 +1,233 @@
+{
+  "project_name": "Member & Transaction Intelligence (Intelijen Anggota & Transaksi)",
+  "app_type": "dashboard",
+  "archetype": "SWISS & HIGH-CONTRAST / PERFORMANCE PRO (Banking & Infrastructure)",
+  "language": "Indonesian (Bahasa Indonesia)",
+  "theme": "Light mode default with high contrast, crisp structural borders, and dark navy header/sidebar anchors",
+  "typography": {
+    "heading_font": "Plus Jakarta Sans, sans-serif",
+    "body_font": "IBM Plex Sans, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "weights": {
+      "light": "300",
+      "regular": "400",
+      "medium": "500",
+      "semibold": "600",
+      "bold": "700"
+    },
+    "hierarchy": {
+      "page_title": "text-2xl sm:text-3xl font-bold tracking-tight text-slate-900",
+      "section_title": "text-lg sm:text-xl font-semibold tracking-tight text-slate-900",
+      "card_title": "text-sm font-semibold uppercase tracking-wider text-slate-600",
+      "table_header": "text-xs font-semibold uppercase tracking-wider text-slate-500",
+      "metric_value": "text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 font-mono",
+      "body": "text-sm font-normal text-slate-700 leading-relaxed",
+      "caption": "text-xs font-normal text-slate-500"
+    },
+    "number_formatting": {
+      "locale": "id-ID",
+      "currency_symbol": "Rp",
+      "examples": [
+        "Rp1,2 Miliar",
+        "Rp450 Juta",
+        "Rp15,8 Triliun",
+        "Rp125.400.000",
+        "1,45 Juta Tx"
+      ],
+      "compact_rules": "Use Miliar (M), Triliun (T), Juta (Jt) for high density metric cards and table columns."
+    }
+  },
+  "colors": {
+    "palette": {
+      "nav_primary": "#0F172A",
+      "nav_secondary": "#1E293B",
+      "accent_blue": "#0284C7",
+      "accent_teal": "#0D9488",
+      "bg_app": "#F8FAFC",
+      "bg_card": "#FFFFFF",
+      "border_default": "#E2E8F0",
+      "border_strong": "#CBD5E1",
+      "text_primary": "#0F172A",
+      "text_secondary": "#475569",
+      "text_muted": "#64748B"
+    },
+    "status_badges": {
+      "Live": {
+        "label": "Live",
+        "bg": "bg-emerald-50",
+        "text": "text-emerald-700",
+        "border": "border-emerald-200",
+        "dot": "bg-emerald-500"
+      },
+      "UAT": {
+        "label": "UAT",
+        "bg": "bg-amber-50",
+        "text": "text-amber-700",
+        "border": "border-amber-200",
+        "dot": "bg-amber-500"
+      },
+      "Development": {
+        "label": "Development",
+        "bg": "bg-sky-50",
+        "text": "text-sky-700",
+        "border": "border-sky-200",
+        "dot": "bg-sky-500"
+      },
+      "Preparation": {
+        "label": "Preparation",
+        "bg": "bg-indigo-50",
+        "text": "text-indigo-700",
+        "border": "border-indigo-200",
+        "dot": "bg-indigo-500"
+      },
+      "On Hold": {
+        "label": "On Hold",
+        "bg": "bg-orange-50",
+        "text": "text-orange-700",
+        "border": "border-orange-200",
+        "dot": "bg-orange-500"
+      },
+      "Not Implemented": {
+        "label": "Not Implemented",
+        "bg": "bg-slate-100",
+        "text": "text-slate-600",
+        "border": "border-slate-200",
+        "dot": "bg-slate-400"
+      }
+    },
+    "severity_levels": {
+      "critical": "bg-red-50 text-red-700 border-red-200",
+      "warning": "bg-amber-50 text-amber-700 border-amber-200",
+      "info": "bg-blue-50 text-blue-700 border-blue-200",
+      "positive": "bg-emerald-50 text-emerald-700 border-emerald-200"
+    },
+    "charts": [
+      "#0284C7",
+      "#0D9488",
+      "#6366F1",
+      "#F59E0B",
+      "#10B981",
+      "#EC4899",
+      "#8B5CF6"
+    ]
+  },
+  "layout_and_navigation": {
+    "structure": "Fixed dark navy topbar or collapsible sidebar with persistent search, quick date period selector, user role badge, and notifications.",
+    "container_padding": "px-4 py-6 sm:px-6 lg:px-8 max-w-[1600px] mx-auto",
+    "grid_gap": "gap-4 sm:gap-6",
+    "cards": "bg-white border border-slate-200 rounded-lg shadow-sm hover:shadow transition-shadow p-5"
+  },
+  "pages_architecture": [
+    {
+      "page_id": "overview",
+      "title_id": "Ringkasan Eksekutif (Overview)",
+      "components": [
+        "Executive KPI Cards (Volume, Nominal, Revenue/Fee, Live Matrix Coverage %)",
+        "Period Comparison Badges (MoM / YoY / YTD)",
+        "Monthly Trend Line/Bar Chart (Recharts)",
+        "Status Distribution Donut Chart",
+        "Top 5 Member Banks & Top 5 Products Bar Chart"
+      ]
+    },
+    {
+      "page_id": "matriks_mitra",
+      "title_id": "Matriks Mitra (Member x Product Matrix)",
+      "components": [
+        "Sticky-header and sticky-first-column Matrix Grid (24 Banks x 14 Products)",
+        "Implementation Status Badges with quick-filter toggles",
+        "Search & Multi-select Filter Bar with active count chips",
+        "Cell detail click popover / sheet preview"
+      ]
+    },
+    {
+      "page_id": "rekap_transaksi",
+      "title_id": "Rekap Transaksi (Transaction Analytics)",
+      "components": [
+        "Volume & Nominal Aggregated Performance Charts",
+        "Issuer vs Acquirer Net Position Table & Chart",
+        "Granular Product & Channel Filter Bar",
+        "Data Export (CSV / Excel)"
+      ]
+    },
+    {
+      "page_id": "detail_member",
+      "title_id": "Detail Member (Member Deep-Dive)",
+      "components": [
+        "Member Bank Profile & Contact Metadata",
+        "Product Adoption Timeline",
+        "Volume & Revenue Contribution Breakdown",
+        "Transaction Health & SLA Status Indicators"
+      ]
+    },
+    {
+      "page_id": "management_insights",
+      "title_id": "Management Insights (Analisis Lanjutan)",
+      "components": [
+        "Rule-based Insight Cards with Severity Badges (Critical / Warning / Positive / Info)",
+        "Waterfall Chart (Revenue/Volume Drivers)",
+        "Growth-vs-Contribution Quadrant Scatter Chart",
+        "Member x Product Transaction Heatmap",
+        "Period Filter Controls (MoM / YoY / YTD / QoQ / Custom / Rolling 12M)"
+      ]
+    },
+    {
+      "page_id": "data_management",
+      "title_id": "Manajemen Data (CSV/Excel Import Wizard)",
+      "components": [
+        "7-Step Staging Import Wizard: 1. Select File -> 2. Preview -> 3. Map Columns -> 4. Validate -> 5. Error Resolution -> 6. Confirm -> 7. Result Summary",
+        "Import History & Staging Audit Table"
+      ]
+    },
+    {
+      "page_id": "user_management",
+      "title_id": "Manajemen Pengguna (User & RBAC)",
+      "components": [
+        "User List Table with Role Badges (Admin, Business Analyst, Management)",
+        "Role Permissions Matrix Modal / Sheet"
+      ]
+    },
+    {
+      "page_id": "metric_definitions",
+      "title_id": "Definisi Metrik & Konfigurasi Batas",
+      "components": [
+        "Metric Glossary Table with Formula Tooltips",
+        "Saved Views Configuration",
+        "Threshold Config Page for Anomaly Alerts"
+      ]
+    },
+    {
+      "page_id": "audit_log",
+      "title_id": "Log Audit Sistem",
+      "components": [
+        "Audit Trail Table with Timestamp, User, Action, Entity, and IP Address",
+        "Filterable Event Log"
+      ]
+    }
+  ],
+  "accessibility_and_testing": {
+    "test_id_convention": "All interactive elements (buttons, inputs, select menus, filter chips, table rows, tab triggers, modal toggles) MUST include data-testid in kebab-case format.",
+    "sample_test_ids": [
+      "data-testid=\"nav-link-overview\"",
+      "data-testid=\"nav-link-matriks-mitra\"",
+      "data-testid=\"nav-link-rekap-transaksi\"",
+      "data-testid=\"nav-link-management-insights\"",
+      "data-testid=\"kpi-card-total-volume\"",
+      "data-testid=\"kpi-card-total-nominal\"",
+      "data-testid=\"matrix-filter-bank-search\"",
+      "data-testid=\"matrix-filter-status-select\"",
+      "data-testid=\"matrix-cell-bank-01-product-qris\"",
+      "data-testid=\"import-wizard-step-1-file-input\"",
+      "data-testid=\"import-wizard-submit-button\"",
+      "data-testid=\"period-comparison-dropdown\"",
+      "data-testid=\"insight-card-critical-1\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Use standard Javascript React (.js / .jsx) components matching existing project structure.",
+    "Strictly follow Indonesian banking number formats: Rp1,2 Miliar, Rp450 Juta, Rp15,8 Triliun.",
+    "Never use fully transparent background on overlays, headers, dropdown menus, or tooltips.",
+    "Use Recharts or Shadcn chart wrappers for responsive, accessible data visualization.",
+    "Ensure the 24 fictional member banks ('Bank Alias 01' through 'Bank Alias 24') and 14 products are fully represented across matrix and charts with realistic mock data.",
+    "Add data-testid to every interactive component for automated test assertions."
+  ]
+}
