@@ -30,8 +30,8 @@ async def lifespan(app: FastAPI):
     await db.transactions.create_index([("product_code", 1), ("period", 1)])
     await db.member_products.create_index([("member_code", 1), ("product_code", 1)], unique=True)
     await db.audit_logs.create_index([("timestamp", -1)])
-    await seed_users()
-    await seed_demo(db)
+    # await seed_users()
+    # await seed_demo(db)
     logger.info("Startup selesai: user & data demo siap")
     yield
 
@@ -43,10 +43,10 @@ app.include_router(core_router)
 app.include_router(insights_router)
 app.include_router(admin_router)
 
-frontend_url = os.environ.get("FRONTEND_URL", "http://localhost:3000")
+frontend_url = os.environ.get("FRONTEND_URL", "http://localhost:3001")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[frontend_url, "http://localhost:3000"],
+    allow_origins=[frontend_url, "http://localhost:3001"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

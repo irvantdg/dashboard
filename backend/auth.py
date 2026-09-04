@@ -55,8 +55,10 @@ def create_refresh_token(user_id: str, ver: int = 0) -> str:
 
 
 def _set_cookies(resp: Response, access: str, refresh: str):
-    resp.set_cookie("access_token", access, httponly=True, secure=True, samesite="none", max_age=1800, path="/")
-    resp.set_cookie("refresh_token", refresh, httponly=True, secure=True, samesite="none", max_age=604800, path="/")
+    # resp.set_cookie("access_token", access, httponly=True, secure=True, samesite="none", max_age=1800, path="/")
+    # resp.set_cookie("refresh_token", refresh, httponly=True, secure=True, samesite="none", max_age=604800, path="/")
+    resp.set_cookie("access_token", access, httponly=True, secure=False, samesite="lax", max_age=1800, path="/")
+    resp.set_cookie("refresh_token", refresh, httponly=True, secure=False, samesite="lax", max_age=604800, path="/")
 
 
 def _public_user(u: dict) -> dict:
@@ -199,7 +201,8 @@ async def refresh(request: Request, response: Response):
     if not user or payload.get("ver", 0) != user.get("token_version", 0):
         raise HTTPException(401, "Sesi kedaluwarsa")
     access = create_access_token(user["_id"], user["email"], user.get("token_version", 0))
-    response.set_cookie("access_token", access, httponly=True, secure=True, samesite="none", max_age=1800, path="/")
+    # response.set_cookie("access_token", access, httponly=True, secure=True, samesite="none", max_age=1800, path="/")
+    response.set_cookie("access_token", access, httponly=True, secure=False, samesite="lax", max_age=1800, path="/",)
     return {"message": "ok"}
 
 

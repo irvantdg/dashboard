@@ -130,7 +130,7 @@ async def insights(request: Request, user: dict = Depends(get_current_user)):
 
     # Heatmap member × produk (pertumbuhan % metrik terpilih)
     top_members = [r["key"] for r in sorted(member_rows, key=lambda r: -r[f"a_{metric}"])[:12]]
-    top_products = [r["key"] for r in sorted(product_rows, key=lambda r: -r[f"a_{metric}"])[:8]]
+    top_products = [r["key"] for r in sorted(product_rows, key=lambda r: -r[f"a_{metric}"])[:12]]
     if top_members and top_products:
         from metrics import build_match
         mpA = await db.transactions.aggregate([
